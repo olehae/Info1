@@ -72,24 +72,22 @@ public class kurven {
     // ignore the first + and the last -
     for (int i = Ordnung; i < plusminus.length() - Ordnung; i++) {
       if (plusminus.charAt(i) == 'F') {
-        // rotation can only be 0, 2 or -2
-        if (rotation == 0) {
-          flr += "F";
+        // add R and L depending on rotation counter
+        if (rotation > 0) {
+          flr += "R".repeat(rotation/2);
         }
-        if (rotation == 2) {
-          flr += "RF";
+        if (rotation < 0) {
+          flr += "L".repeat(-(rotation/2));
         }
-        if (rotation == -2) {
-          flr += "LF";
-        }
+        flr += "F";
         rotation = 0; // reset rotation after every F
       }
       else if (plusminus.charAt(i) == '+') {
-        rotation += 1;
+        rotation++;
       }
       else if (plusminus.charAt(i) == '-') {
-        rotation -= 1;
-      } 
+        rotation--;
+      }
     }
     return flr;
   }
