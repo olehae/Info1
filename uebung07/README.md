@@ -1,0 +1,4 @@
+## Requirements
+
+- StdRandom
+- StdOut
