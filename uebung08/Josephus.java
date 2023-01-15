@@ -1,13 +1,18 @@
 class Josephus {
     public static void main(String[] args) {
-        int length = Integer.parseInt(args[0]);
-        int step = Integer.parseInt(args[1]);
-        int[] circle = josephusPermutation(length, step); // init circle with josephusPermutation
-        for (int i=0; i<circle.length-1; i++) {
-            System.out.print(circle[i]+", ");
+        if (args.length != 2) {
+            System.out.println("Josephus <Länge> <Schrittweite>")
         }
-        System.out.println(circle[circle.length-1]);
-        josephusRecursive(circle, circle.length-1, step); // last at beginning is circle.length-1 -> first step goes to element 1
+        else {
+            int length = Integer.parseInt(args[0]);
+            int step = Integer.parseInt(args[1]);
+            int[] circle = josephusPermutation(length, step); // init circle with josephusPermutation
+            for (int i=0; i<circle.length-1; i++) {
+                System.out.print(circle[i]+", ");
+            }
+            System.out.println(circle[circle.length-1]);
+            josephusRecursive(circle, circle.length-1, step); // last at beginning is circle.length-1 -> first step goes to element 1
+        }
     }
 
     public static int[] josephusPermutation(int length, int step) {

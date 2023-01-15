@@ -1,7 +1,7 @@
 public class OmittedNumbers {
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.out.println("Bitte nur eine Nummer als Maximum eingeben");
+            System.out.println("OmittedNumbers <Maximum>");
         }
         else {
             int n = Integer.parseInt(args[0]); // Integer von Kommandozeile
