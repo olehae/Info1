@@ -1,7 +1,7 @@
 class Josephus {
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("Josephus <Länge> <Schrittweite>")
+            System.out.println("Josephus <Länge> <Schrittweite>");
         }
         else {
             int length = Integer.parseInt(args[0]);
